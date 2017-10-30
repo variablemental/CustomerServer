@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:visibility="visible">
+
+    <TextView
+        style="@style/chatTimeView"
+        android:id="@+id/timeView"
+        android:text="今天 19:45" />
+
+    <RelativeLayout
+        android:id="@+id/contentLy"
+        style="@style/fromLayoutStyle"
+        android:layout_below="@+id/timeView">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/headView"
+            style="@style/fromHeadViewStyle" />
+
+        <RelativeLayout
+            android:id="@+id/content_container"
+            android:layout_toRightOf="@id/headView"
+            style="@style/fromContentLayoutStyle">
+
+            <ImageView
+                style="@style/contentPadding"
+                android:id="@+id/contentView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="100dp"
+                android:minHeight="100dp"
+                android:maxWidth="200dp"
+                android:maxHeight="300dp"
+                android:src="@drawable/loading_pic"
+                android:visibility="gone"/>
+            <com.facebook.drawee.view.SimpleDraweeView
+                style="@style/contentPadding"
+                android:id="@+id/contentViewGif"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

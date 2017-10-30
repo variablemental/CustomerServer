@@ -68,4 +68,10 @@
             style="@style/tab_button_bg"/>
 
     </RadioGroup>
+
+    <com.emotibot.xychatlib.XYlibFloatingTriggerButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icon_shadow"
+        android:background="@android:color/transparent"/>
 </TabHost>

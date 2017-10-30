@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:visibility="visible">
+
+    <TextView
+        style="@style/chatTimeView"
+        android:id="@+id/timeView"
+        android:text="今天 19:45" />
+
+    <LinearLayout
+        android:id="@+id/contentLy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/timeView"
+        android:background="@drawable/bg_roundcorner"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="17sp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="物流跟踪"/>
+        <RelativeLayout
+            style="@style/KuaidiLine"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="17sp">
+                <RelativeLayout
+                    style="@style/KuaidiVLine" />
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/circle_kuaidi1"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/text1"
+                style="@style/KuaidiText"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="25dp"
+                android:text="物流跟踪"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="17sp">
+                <RelativeLayout
+                    style="@style/KuaidiVLine" />
+                <ImageView
+                    style="@style/KuaidiCircle2"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/text2"
+                style="@style/KuaidiText"
+                android:layout_marginBottom="25dp"
+                android:text="物流跟踪"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="17sp">
+                <RelativeLayout
+                    style="@style/KuaidiVLine" />
+                <ImageView
+                    style="@style/KuaidiCircle2"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/text3"
+                style="@style/KuaidiText"
+                android:layout_marginBottom="20dp"
+                android:text="物流跟踪"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

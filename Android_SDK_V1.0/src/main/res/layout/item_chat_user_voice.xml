@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/timeView"
+        style="@style/chatTimeView"
+        android:text="今天 19:45" />
+
+    <RelativeLayout
+        android:id="@+id/contentLy"
+        style="@style/toLayoutStyle"
+        android:layout_below="@+id/timeView">
+
+        <!--include layout="@layout/include_msg_not_send"
+            android:id="@+id/status_indicator"
+            android:layout_toLeftOf="@+id/voiceLength"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="20dp"
+            android:layout_height="20dp" /-->
+        <ImageView
+            android:id="@+id/status_indicator"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_toLeftOf="@+id/content_container"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:padding="3dp"
+            android:background="@drawable/msg_point_holder"
+            android:src="@drawable/record_short" />
+
+        <ImageView
+            android:id="@+id/headView"
+            style="@style/toHeadViewStyle" />
+
+
+        <RelativeLayout
+            android:id="@+id/content_container"
+            style="@style/toContentLayoutStyle"
+            android:layout_toLeftOf="@+id/headView"
+            android:gravity="right">
+
+            <ImageView
+                android:id="@+id/animView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="3dp"
+                android:background="@drawable/chat_rec_user_voice_3" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/voiceLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/content_container"
+            android:text="3''"
+            android:textColor="@color/chatVoiceColor"
+            android:textSize="@dimen/text_middle_size" />
+    </RelativeLayout>
+
+</RelativeLayout>

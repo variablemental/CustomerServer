@@ -8,4 +8,8 @@
     <string name="action_search">搜索</string>
     <string name="search_hint">请输入想要搜索的内容</string>
     <string name="text_chatting">智能客服</string>
+    <string name="test_me">这是"我的"页面</string>
+    <string name="test_recognition">这是"识别"页面</string>
+    <string name="test_setting">这是"设置"页面</string>
+    <string name="test_home">这是"主页"页面</string>
 </resources>

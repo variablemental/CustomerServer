@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_match_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="15dp"
+        android:textSize="@dimen/text_time"
+        android:text="2016-11-20 07:30"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="4dp"
+        android:layout_below="@+id/tv_match_time">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_team_logo_host"
+                style="@style/NbaLogoImg"/>
+            <TextView
+                android:id="@+id/tv_team_name_host"
+                style="@style/NbaTeamNameTv"
+                android:text="火箭"
+                />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp">
+            <TextView
+                android:id="@+id/tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="@dimen/text_score"
+                android:text="135 : 120"/>
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="1dp"
+                android:paddingBottom="1dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+
+                android:textSize="@dimen/text_small_size"
+                android:text="已完成"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_score_end"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/iv_team_logo_client"
+                style="@style/NbaLogoImg"/>
+            <TextView
+                android:id="@+id/tv_team_name_client"
+                style="@style/NbaTeamNameTv"
+                android:text="火箭"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/concert_line"/>
+</LinearLayout>

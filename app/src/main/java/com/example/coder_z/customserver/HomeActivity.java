@@ -5,13 +5,14 @@ import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.app.TabActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.RadioGroup;
+import android.widget.SearchView;
 import android.widget.TabHost;
 
 /**
@@ -20,9 +21,14 @@ import android.widget.TabHost;
 
 public class HomeActivity extends TabActivity implements RadioGroup.OnCheckedChangeListener {
 
+    private static final String Home_Tag="Home";
+    private static final String Recognition_Tag="Recognition";
+    private static final String Me_Tag="Me";
+    private static final String Setting_Tag="Setting";
 
     private TabHost tabHost;
     private ActionBar actionBar;
+    private RadioGroup mRadioGroup;
 
     @Override
     public void onCreate(Bundle savedStateInstance){
@@ -33,9 +39,14 @@ public class HomeActivity extends TabActivity implements RadioGroup.OnCheckedCha
         if(actionBar!=null){
             actionBar.show();
         }
+        mRadioGroup=(RadioGroup)findViewById(R.id.radio_group);
+        mRadioGroup.setOnCheckedChangeListener(this);
         tabHost=getTabHost();
-
-
+        tabHost.addTab(tabHost.newTabSpec(Home_Tag).setIndicator("0").setContent(new Intent(HomeActivity.this,MainActivity.class)));
+        tabHost.addTab(tabHost.newTabSpec(Recognition_Tag).setIndicator("1").setContent(new Intent(HomeActivity.this,RecognitionActivity.class)));
+        tabHost.addTab(tabHost.newTabSpec(Me_Tag).setIndicator("2").setContent(new Intent(HomeActivity.this,MeActivity.class)));
+        tabHost.addTab(tabHost.newTabSpec(Setting_Tag).setIndicator("3").setContent(new Intent(HomeActivity.this,SettingActivity.class)));
+        tabHost.setCurrentTab(0);
 
     }
 
