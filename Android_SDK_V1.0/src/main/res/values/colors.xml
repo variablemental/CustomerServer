@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="half_trans">#c000</color>
+    <color name="half_white_trans">#cfff</color>
+
+    <color name="transparent">#32adc2</color>
+    <color name="colorPrimary">#32adc2</color>
+    <color name="dialogButton">#32adc2</color>
+    <color name="dialogButtonPressed">#1e8fa2</color>
+    <color name="chatDefaultBg">#f0f2f1</color>
+    <color name="theme_green_primary_color">#32adc2</color>
+
+    <color name="chatTimeText">#efff</color>
+    <color name="chatTimeBG">#cfcfcf</color>
+    <color name="sendFailBG">#ff80c0</color>
+
+    <color name="chatToTextColor">#fff</color>
+    <color name="chatFromTextColor">#000</color>
+
+    <color name="colorAccent">#32adc2</color>
+
+    <color name="bg_record_dialog">#6000</color>
+    <color name="text_record_cancel">#f24a4a</color>
+    <color name="text_record_normal">#ecf4ff</color>
+    <color name="sendText">#000</color>
+    <color name="sendPressedSolid">#bfbfbf</color>
+
+    <color name="chatVoiceColor">#fff</color>
+
+    <!-- kuaidi -->
+    <color name="kuaidi_line">#a0a0a0</color>
+    <color name="kuaidi_textcolor">#fea11e</color>
+    <color name="kuaidi_circle1">#fea11e</color>
+    <color name="kuaidi_circle2">#a0a0a0</color>
+
+    <!-- news -->
+    <color name="news_circle_highlight">#a0a0a0</color>
+    <color name="news_circle_dark">#d2d2d2</color>
+    <color name="news_bg">#ffff</color>
+    <color name="new_bg_stroke">#05e1ff</color>
+    <color name="new_text">#000</color>
+    <color name="new_line">#a0a0a0</color>
+    <color name="new_no_more">#a0a0a0</color>
+
+    <!--nba-->
+    <color name="score_finish">#0f6eb5</color>
+    <color name="score_other">#ea1e4f</color>
+    <color name="score_not_begin">#7d7d7d</color>
+
+    <color name="concert_line">#82817d</color>
+
+</resources>

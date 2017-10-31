@@ -1,0 +1,169 @@
+<resources>
+    <style name="Theme_NoTitle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/theme_green_primary_color</item>
+        <item name="colorPrimaryDark">@color/theme_green_primary_color</item>
+        <item name="colorAccent">#d3d3d3</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Dialog_Fullscreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/half_trans</item>
+    </style>
+
+    <style name="chatTimeView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_chat_time</item>
+        <item name="android:textColor">@color/chatTimeText</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_marginBottom">11dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="layoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="fromLayoutStyle" parent="layoutStyle">
+        <item name="android:paddingRight">40dp</item>
+    </style>
+
+    <style name="toLayoutStyle" parent="layoutStyle">
+        <!--<item name="android:layout_marginTop">7dp</item>-->
+        <item name="android:paddingLeft">40dp</item>
+    </style>
+
+    <style name="headViewStyle">
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_height">@dimen/chat_user_header_size</item>
+        <item name="android:layout_width">@dimen/chat_user_header_size</item>
+    </style>
+
+    <style name="fromHeadViewStyle" parent="headViewStyle">
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+
+    <style name="toHeadViewStyle" parent="headViewStyle">
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="contentLayoutStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="fromContentLayoutStyle" parent="contentLayoutStyle">
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:background">@drawable/ic_chat_left_clickable</item>
+    </style>
+
+    <style name="toContentLayoutStyle" parent="contentLayoutStyle">
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:background">@drawable/ic_chat_right_clickable</item>
+    </style>
+
+    <style name="contentPadding">
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:paddingRight">3dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="Theme_AudioDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="KuaidiLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/kuaidi_line</item>
+        <item name="android:layout_marginLeft">17dp</item>
+        <item name="android:layout_marginRight">17dp</item>
+    </style>
+
+    <style name="KuaidiVLine">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/kuaidi_line</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="KuaidiCircle2">
+        <item name="android:layout_width">8dp</item>
+        <item name="android:layout_height">8dp</item>
+        <item name="android:background">@drawable/circle_kuaidi2</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="KuaidiText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="NewsPageRl">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="NewsPageImg">
+        <item name="android:layout_width">42dp</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="NewsPageText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:lineSpacingExtra">4dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/new_text</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="NewsPageLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/new_line</item>
+    </style>
+
+    <style name="NbaLogoImg">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="NbaTeamNameTv">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_small_size</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

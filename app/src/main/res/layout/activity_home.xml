@@ -35,14 +35,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="bottom"
-        android:id="@+id/radio_group">
+        android:id="@+id/radio_group"
+        android:background="@color/title_bg"
+        >
 
         <RadioButton
             android:checked="true"
             android:text="@string/text_home"
             android:textColor="@color/tab_text"
             android:id="@+id/main"
-            android:drawableTop="@drawable/ic_view_headline_black_24dp"
+            android:drawableTop="@color/tab_button_home"
+
             style="@style/tab_button_bg" />
 
         <RadioButton
@@ -50,22 +53,28 @@
             android:textColor="@color/tab_text"
             android:id="@+id/recognition"
             style="@style/tab_button_bg"
-            android:drawableTop="@drawable/ic_recognition_black_24dp"
+            android:drawableTop="@color/tab_button_recognition"
             android:layout_width="0dp" />
 
         <RadioButton
             android:text="@string/text_browser"
             android:textColor="@color/tab_text"
             android:id="@+id/browser"
-            android:drawableTop="@drawable/ic_browser_black_24dp"
+            android:drawableTop="@color/tab_button_browser"
             style="@style/tab_button_bg" />
 
         <RadioButton
             android:text="@string/text_setting"
             android:textColor="@color/tab_text"
             android:id="@+id/setting"
-            android:drawableTop="@drawable/ic_toc_black_24dp"
+            android:drawableTop="@color/tab_button_setting"
             style="@style/tab_button_bg"/>
 
     </RadioGroup>
+
+ <!--   <com.emotibot.xychatlib.XYlibFloatingTriggerButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icon_shadow"
+        android:background="@android:color/transparent"/>-->
 </TabHost>

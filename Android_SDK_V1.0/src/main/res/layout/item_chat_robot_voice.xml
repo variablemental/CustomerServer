@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:visibility="visible">
+
+    <TextView
+        style="@style/chatTimeView"
+        android:id="@+id/timeView"
+        android:text="今天 19:45" />
+
+    <RelativeLayout
+        android:id="@+id/contentLy"
+        style="@style/fromLayoutStyle"
+        android:layout_below="@+id/timeView">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/headView"
+            style="@style/fromHeadViewStyle" />
+
+        <RelativeLayout
+            android:id="@+id/content_container"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@id/headView"
+            style="@style/fromContentLayoutStyle">
+
+            <ImageView
+                android:scaleType="fitCenter"
+                android:id="@+id/animView"
+                android:layout_margin="3dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/chat_rec_shadow_voice_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/unReadIndicator"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_alignLeft="@+id/voiceLength"
+            android:src="@drawable/point_holder"
+            android:layout_width="6dp"
+            android:layout_height="6dp" />
+
+        <TextView
+            android:id="@+id/voiceLength"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/content_container"
+            android:text="3''"
+            android:textSize="@dimen/text_middle_size"
+            android:textColor="@color/chatVoiceColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

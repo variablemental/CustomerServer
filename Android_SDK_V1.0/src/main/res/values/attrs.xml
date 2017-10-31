@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RecordBtn">
+        <attr name="itemBackgroundNormal" format="reference"/>
+        <attr name="itemBackgroundPressed" format="reference"/>
+        <attr name="itemTextColorNormal" format="color|reference"/>
+        <attr name="itemTextColorPressed" format="color|reference"/>
+        <attr name="showButtonText" format="boolean"/>
+    </declare-styleable>
+</resources>

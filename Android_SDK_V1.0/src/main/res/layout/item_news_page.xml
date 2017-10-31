@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical"
+    android:id="@+id/ll_news">
+
+    <RelativeLayout
+        android:id="@+id/rl_news1"
+        style="@style/NewsPageRl">
+        <ImageView
+            android:id="@+id/news_img1"
+            style="@style/NewsPageImg"/>
+
+        <TextView
+            android:id="@+id/news_title1"
+            style="@style/NewsPageText"
+            android:layout_toLeftOf="@id/news_img1"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_news_line1"
+            style="@style/NewsPageLine"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_news2"
+        style="@style/NewsPageRl">
+        <ImageView
+            android:id="@+id/news_img2"
+            style="@style/NewsPageImg"/>
+        <TextView
+            android:id="@+id/news_title2"
+            style="@style/NewsPageText"
+            android:layout_toLeftOf="@id/news_img2"/>
+        <RelativeLayout
+            android:id="@+id/rl_news_line2"
+            style="@style/NewsPageLine"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_news3"
+        style="@style/NewsPageRl">
+        <ImageView
+            android:id="@+id/news_img3"
+            style="@style/NewsPageImg"/>
+        <TextView
+            android:id="@+id/news_title3"
+            style="@style/NewsPageText"
+            android:layout_toLeftOf="@id/news_img3"/>
+        <RelativeLayout
+            android:id="@+id/rl_news_line3"
+            style="@style/NewsPageLine"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_news4"
+        style="@style/NewsPageRl">
+        <ImageView
+            android:id="@+id/news_img4"
+            style="@style/NewsPageImg"/>
+        <TextView
+            android:id="@+id/news_title4"
+            style="@style/NewsPageText"
+            android:layout_toLeftOf="@id/news_img4" />
+        <RelativeLayout
+            android:id="@+id/rl_news_line4"
+            style="@style/NewsPageLine"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_no_more"
+        style="@style/NewsPageRl">
+        <TextView
+            android:id="@+id/nomore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="16sp"
+            android:textColor="@color/new_no_more"
+            android:gravity="center"
+            android:text="没有更多此类新闻了"/>
+        <RelativeLayout
+            android:id="@+id/rl_nomore_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentTop="true"
+            android:background="@color/new_line" />
+    </RelativeLayout>
+</LinearLayout>
