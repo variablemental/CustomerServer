@@ -1,11 +1,14 @@
 package com.emotibot.xychatlib;
 
 import android.Manifest;
+<<<<<<< HEAD
 import android.app.ActionBar;
 import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.Context;
 import android.content.Intent;
+=======
+>>>>>>> aeb6172ed50d5bf17bdec11826090618bc94c3b3
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+<<<<<<< HEAD
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,6 +24,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.SearchView;
+=======
+import android.view.View;
+>>>>>>> aeb6172ed50d5bf17bdec11826090618bc94c3b3
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -51,8 +58,11 @@ public class XYlibChatActivity extends AppCompatActivity {
     private Gson mGson;
     private String mUid;
 
+<<<<<<< HEAD
     private ActionBar actionBar;
 
+=======
+>>>>>>> aeb6172ed50d5bf17bdec11826090618bc94c3b3
     private String [] mLocationNeededPermission = new String[] {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -62,7 +72,11 @@ public class XYlibChatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         //setTheme(R.style.Theme_NoTitle);
+=======
+        setTheme(R.style.Theme_NoTitle);
+>>>>>>> aeb6172ed50d5bf17bdec11826090618bc94c3b3
         setContentView(R.layout.activity_xylibchat);
 
         //only portrait
@@ -78,11 +92,14 @@ public class XYlibChatActivity extends AppCompatActivity {
                 finish();
             }
         });
+<<<<<<< HEAD
 
         actionBar=getActionBar();
         if(actionBar!=null){
             actionBar.show();
         }
+=======
+>>>>>>> aeb6172ed50d5bf17bdec11826090618bc94c3b3
     }
 
     @Override
@@ -153,7 +170,10 @@ public class XYlibChatActivity extends AppCompatActivity {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> aeb6172ed50d5bf17bdec11826090618bc94c3b3
     public XYlibNetworkHelper getNetworkHelper() {
         return networkHelper;
     }

@@ -72,9 +72,17 @@
 
     </RadioGroup>
 
+<<<<<<< HEAD
  <!--   <com.emotibot.xychatlib.XYlibFloatingTriggerButton
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/icon_shadow"
         android:background="@android:color/transparent"/>-->
+=======
+    <com.emotibot.xychatlib.XYlibFloatingTriggerButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/icon_shadow"
+        android:background="@android:color/transparent"/>
+>>>>>>> aeb6172ed50d5bf17bdec11826090618bc94c3b3
 </TabHost>
