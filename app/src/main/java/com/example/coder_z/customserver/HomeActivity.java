@@ -7,10 +7,7 @@ import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-<<<<<<< HEAD
 import android.util.Log;
-=======
->>>>>>> aeb6172ed50d5bf17bdec11826090618bc94c3b3
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -45,10 +42,7 @@ public class HomeActivity extends TabActivity implements RadioGroup.OnCheckedCha
         if(actionBar!=null){
             actionBar.show();
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> aeb6172ed50d5bf17bdec11826090618bc94c3b3
         mRadioGroup=(RadioGroup)findViewById(R.id.radio_group);
         mRadioGroup.setOnCheckedChangeListener(this);
         tabHost=getTabHost();
