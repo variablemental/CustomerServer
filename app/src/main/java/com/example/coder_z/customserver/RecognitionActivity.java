@@ -25,6 +25,7 @@ public class RecognitionActivity extends AppCompatActivity {
             reco_result=RecognitionResult.detect(bytes);
             mNotice.setText(reco_result);
             Toast.makeText(RecognitionActivity.this,reco_result,Toast.LENGTH_LONG);
+            System.out.println(reco_result);
         }
     };
 
@@ -56,7 +57,7 @@ public class RecognitionActivity extends AppCompatActivity {
                 ByteArrayOutputStream baos=new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
                 bytes=baos.toByteArray();
-                new Thread(networkTask).start();                                                  //后台线程调用API识别
+                new Thread(networkTask).start();    //后台线程调用API识别
                 }
         }
     }

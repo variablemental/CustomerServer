@@ -25,7 +25,7 @@ public class RecognitionResult {
         // 请求url
         try {
             // 本地文件路径
-            String filePath = "[本地文件路径]";
+            String filePath = "F:\\1.jpg";
             byte[] imgData = FileUtil.readFileByBytes(filePath);
 
             String imgStr = Base64Util.encode(imgData);
@@ -59,8 +59,8 @@ public class RecognitionResult {
         System.out.println(result);
         return result;
     }
-    }
 
-/*    public static void main(String[] args) {
-        ObjectDetect.detect();
-    }*/
+    public static void main(String[] args) {
+       System.out.println(RecognitionResult.detect());
+    }
+}

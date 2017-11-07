@@ -17,7 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets{
+        main{
+            jniLibs.srcDirs=['libs']
+        }
+    }
 }
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -28,4 +34,5 @@ dependencies {
     compile project(':Android_SDK_V1.0')
     testCompile 'junit:junit:4.12'
     compile files('libs/aip-java-sdk-3.2.1.jar')
+    compile files('libs/ocr-sdk.jar')
 }
