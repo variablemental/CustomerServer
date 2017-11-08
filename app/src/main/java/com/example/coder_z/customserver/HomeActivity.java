@@ -47,7 +47,7 @@ public class HomeActivity extends TabActivity implements RadioGroup.OnCheckedCha
         mRadioGroup.setOnCheckedChangeListener(this);
         tabHost=getTabHost();
         tabHost.addTab(tabHost.newTabSpec(Home_Tag).setIndicator("0").setContent(new Intent(HomeActivity.this,MainActivity.class)));
-        tabHost.addTab(tabHost.newTabSpec(Recognition_Tag).setIndicator("1").setContent(new Intent(HomeActivity.this,RecognitionActivity.class)));
+        tabHost.addTab(tabHost.newTabSpec(Recognition_Tag).setIndicator("1").setContent(new Intent(HomeActivity.this,OCRActivity.class)));
         tabHost.addTab(tabHost.newTabSpec(Me_Tag).setIndicator("2").setContent(new Intent(HomeActivity.this,MeActivity.class)));
         tabHost.addTab(tabHost.newTabSpec(Setting_Tag).setIndicator("3").setContent(new Intent(HomeActivity.this,SettingActivity.class)));
         tabHost.setCurrentTab(0);

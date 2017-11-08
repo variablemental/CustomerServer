@@ -62,6 +62,10 @@
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden">
         </activity>
 
+        <activity android:name=".OCRActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

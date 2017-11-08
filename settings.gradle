@@ -1,1 +1,1 @@
-include ':app', ':Android_SDK_V1.0'
+include ':app', ':Android_SDK_V1.0', ':ocr_ui'
