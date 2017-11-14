@@ -36,7 +36,7 @@
         android:orientation="horizontal"
         android:layout_gravity="bottom"
         android:id="@+id/radio_group"
-        android:background="@color/title_bg"
+        android:background="@drawable/bottom_bar"
         >
 
         <RadioButton

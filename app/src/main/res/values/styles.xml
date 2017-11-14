@@ -6,6 +6,11 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/custom_bar_style</item>
+    </style>
+    
+    <style name="custom_bar_style" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">#00a69c</item>
     </style>
 
     <style name="tab_button_bg">

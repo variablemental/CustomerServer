@@ -1,6 +1,5 @@
 package com.example.coder_z.customserver;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -19,7 +18,6 @@ import com.baidu.ocr.sdk.model.Word;
 import com.baidu.ocr.sdk.model.WordSimple;
 import com.baidu.ocr.ui.camera.CameraActivity;
 
-import java.io.BufferedReader;
 import java.io.File;
 
 /**
@@ -49,11 +47,9 @@ public class OCRActivity extends AppCompatActivity {
                         new File(getApplicationContext().getFilesDir(), "pic.jpg").getAbsolutePath());
                 intent.putExtra(CameraActivity.KEY_CONTENT_TYPE,
                         CameraActivity.CONTENT_TYPE_GENERAL);
-                startActivityForResult(intent, REQUEST_CODE_OCR);
+                startActivityForResult(intent,REQUEST_CODE_OCR);
             }
         });
-
-
         initAccessTokenWithAkSk();
     }
 

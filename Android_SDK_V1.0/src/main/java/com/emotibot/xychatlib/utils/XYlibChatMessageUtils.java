@@ -7,7 +7,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.emotibot.xychatlib.XYlibChatMessageAdapter;
 import com.emotibot.xychatlib.constants.URLConstants;
@@ -101,7 +104,17 @@ public class XYlibChatMessageUtils {
         return createMsg(uid, msgType, TO_ROBOT, msg);
     }
 
+    /**
+     *
+     * @param uid       Activity名称
+     * @param msgType  信息类型，文字/图片/声音
+     * @param msg       信息主体
+     * @return          生成一个XYLibChatMessage对象，定义多种状态属性
+     */
+    //机器人对话气泡创建
     public static XYlibChatMessage createRobotMsg(String uid, int msgType, String msg) {
+        if (msgType!=TYPING)
+            msg=msg_format(msg);
         return createMsg(uid, msgType, FROM_ROBOT, msg);
     }
 
@@ -206,4 +219,44 @@ public class XYlibChatMessageUtils {
             return sdf.format(date) + " ";
         }
     }
+
+    //格式化答案
+    private static String msg_format(String msg){
+        String pattern = "\\[[1-9]*\\]";
+        Pattern r = Pattern.compile(pattern);
+        Matcher m = r.matcher(msg);
+        String[] splits=msg.split(pattern);
+        LinkedList<String> seq=new LinkedList<String>();
+        while(m.find()){
+            seq.add(m.group());
+        }
+        if(seq.size()>0) {
+            StringBuffer buf = new StringBuffer();
+            buf.append(splits[0] + "\n");                                                                 //头部段
+            for (int i = 1; i < splits.length - 1; i++) {
+                buf.append(seq.get(i - 1) + splits[i] + "\n");                                              //内容段，给每一个标号段换行
+            }
+            buf.append(seq.get(seq.size() - 1) + splits[splits.length - 1]);                                  //尾部段
+            return buf.toString();
+        }
+        return msg;
+    }
+
+/*    public static void main(String args[]) {
+        String str = "您好，请选择需要办理的业务：\n" +
+                "[1]危险废物经营许可\n" +
+                "[2]固体废物跨省转移\n" +
+                "[3]建设项目环境影响评价文件审批\n" +
+                "[4]其他业务";
+        String regex = "\\[[1-9]*\\]";
+        Pattern r = Pattern.compile(regex);
+        Matcher m = r.matcher(str);
+        while(m.find()){
+            System.out.println(m.group());
+        }
+        //System.out.println(m.group());
+        for(String s:str.split(regex))
+            System.out.println(s);
+    }*/
+
 }

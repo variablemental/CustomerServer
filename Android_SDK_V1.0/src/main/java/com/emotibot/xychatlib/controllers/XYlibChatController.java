@@ -82,6 +82,7 @@ public class XYlibChatController implements View.OnClickListener {
     }
 
     private void initView() {
+        //控件注册
         etInput = (EditText) mActivity.findViewById(R.id.et_input);
         btnSend = (Button) mActivity.findViewById(R.id.send_btn);
         rvChatList = (RecyclerView) mActivity.findViewById(R.id.rv_chat_list);
@@ -94,6 +95,7 @@ public class XYlibChatController implements View.OnClickListener {
             e.printStackTrace();
         }
 
+        //使用SwipeRefreshLayout上拉刷新界面
         srl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -248,6 +250,7 @@ public class XYlibChatController implements View.OnClickListener {
 
     public void showRobotSay(String msg) {
         deleteRobotSayWait();
+        //设置机器人说话内容
         XYlibChatMessage chatmessage = XYlibChatMessageUtils.createRobotMsg(mActivity.getUid(),
                 XYlibChatMessageUtils.TEXT, msg);
         saveAndUpdateMsg(chatmessage);
