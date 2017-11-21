@@ -29,6 +29,7 @@ public class XYlibViewHolderFactory {
     public static XYlibBaseViewHolder createViewHolder (LayoutInflater inflater, ViewGroup parent, int viewType) {
         XYlibBaseViewHolder viewHolder;
 
+        //设置Viewtype和各个构造方法的映射关系
         initMap();
         if (producerMap.containsKey(viewType)) {
             viewHolder = producerMap.get(viewType).createViewHolder(inflater, parent, viewType);

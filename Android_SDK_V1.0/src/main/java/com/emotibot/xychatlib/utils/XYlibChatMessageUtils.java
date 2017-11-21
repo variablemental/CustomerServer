@@ -86,6 +86,10 @@ public class XYlibChatMessageUtils {
     public static final int MSG_STATUS_SENT = 0x220;
     public static final int MSG_STATUS_DEFAULT = 0x230;
 
+    //--------------msg format----------------
+    private static boolean MSG_LIST=false;
+    private static boolean MSG_LINK=false;
+
     private static Map<Integer, Integer> userMsgTypeMap = new HashMap<>();
     private static Map<Integer, Integer> robotMsgTypeMap = new HashMap<>();
 
@@ -232,15 +236,18 @@ public class XYlibChatMessageUtils {
         }
         if(seq.size()>0) {
             StringBuffer buf = new StringBuffer();
-            buf.append(splits[0] + "\n");                                                                 //头部段
+            //去掉头部段
+            //buf.append(splits[0] + "\n");                                                                 //头部段
             for (int i = 1; i < splits.length - 1; i++) {
                 buf.append(seq.get(i - 1) + splits[i] + "\n");                                              //内容段，给每一个标号段换行
             }
             buf.append(seq.get(seq.size() - 1) + splits[splits.length - 1]);                                  //尾部段
+            MSG_LIST=true;
             return buf.toString();
         }
         return msg;
     }
+
 
 /*    public static void main(String args[]) {
         String str = "您好，请选择需要办理的业务：\n" +
@@ -258,5 +265,20 @@ public class XYlibChatMessageUtils {
         for(String s:str.split(regex))
             System.out.println(s);
     }*/
+
+    public static void main(String args[]){
+
+        String t= "您好，请访问 http://www.jshb.gov.cn 点击查看";
+        String t1="我的QQ是:456456 我的电话是:0532214 我的邮箱是:aaa123@aaa.com";
+
+        String net_pattern="http://(\\w+.)+";
+        //String ss="http";
+        Pattern r = Pattern.compile(net_pattern);
+        Matcher m = r.matcher(t);
+        while(m.find()) {
+            System.out.println(m.group());
+        }
+
+    }
 
 }

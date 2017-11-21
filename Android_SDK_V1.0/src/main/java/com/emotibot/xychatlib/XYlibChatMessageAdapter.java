@@ -3,12 +3,14 @@ package com.emotibot.xychatlib;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
 
 import com.emotibot.xychatlib.factorys.XYlibViewHolderFactory;
 import com.emotibot.xychatlib.models.XYlibChatMessage;
+import com.emotibot.xychatlib.utils.RecyclerViewUtil;
 import com.emotibot.xychatlib.utils.XYlibChatMessageUtils;
 import com.emotibot.xychatlib.viewholders.XYlibBaseViewHolder;
 
@@ -20,6 +22,7 @@ public class XYlibChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.V
     private LayoutInflater mInflater;
     private List<XYlibChatMessage> mChatMsgsList;
     private XYlibChatActivity mActivity;
+    private OnItemClickListener listener=null;
 
     public XYlibChatMessageAdapter(Context context, List<XYlibChatMessage> chatMessagesList) {
         mInflater = LayoutInflater.from(context);
@@ -39,6 +42,8 @@ public class XYlibChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         XYlibBaseViewHolder viewHolder = (XYlibBaseViewHolder)holder;
         viewHolder.bindView(mChatMsgsList.get(position), mActivity, position);
+
+        viewHolder.itemView.setTag(position);
     }
 
     @Override
@@ -60,5 +65,9 @@ public class XYlibChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
 
         return mChatMsgsList.get(position);
+    }
+
+    private static interface OnItemClickListener{
+        void onItemClick(View view,int posistion);
     }
 }

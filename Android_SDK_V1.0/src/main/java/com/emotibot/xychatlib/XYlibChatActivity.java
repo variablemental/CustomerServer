@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
@@ -21,11 +22,14 @@ import android.view.View;
 import android.view.Window;
 import android.widget.SearchView;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.emotibot.xychatlib.controllers.XYlibChatController;
 import com.emotibot.xychatlib.controllers.XYlibRegisterController;
@@ -72,6 +76,7 @@ public class XYlibChatActivity extends AppCompatActivity {
 
         requestPermission(mLocationNeededPermission);
 
+        //注册控制器、线程和辅助类
         initVariables();
 
         findViewById(R.id.ib_back).setOnClickListener(new View.OnClickListener() {
@@ -153,6 +158,10 @@ public class XYlibChatActivity extends AppCompatActivity {
             }
 
         }
+    }
+
+    public void onItemClick(View view){
+        chatController.onItemClick(view);
     }
 
     public XYlibNetworkHelper getNetworkHelper() {

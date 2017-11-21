@@ -1,21 +1,30 @@
 package com.emotibot.xychatlib.controllers;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.test.suitebuilder.TestMethod;
+import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.emotibot.xychatlib.utils.RecyclerViewUtil;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.litesuits.orm.db.assit.QueryBuilder;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -250,6 +259,10 @@ public class XYlibChatController implements View.OnClickListener {
 
     public void showRobotSay(String msg) {
         deleteRobotSayWait();
+        //内容检查和格式化
+
+
+
         //设置机器人说话内容
         XYlibChatMessage chatmessage = XYlibChatMessageUtils.createRobotMsg(mActivity.getUid(),
                 XYlibChatMessageUtils.TEXT, msg);
@@ -358,6 +371,30 @@ public class XYlibChatController implements View.OnClickListener {
     public void onClick(View v) {
         if (v.getId() == R.id.send_btn) {
             onSendClick();
+        }else if(v.getId()==R.id.contentView){
+            Toast.makeText(mActivity,"yes",Toast.LENGTH_LONG).show();
         }
     }
+
+    public void onItemClick(View view){
+        //int childAdapterPosition = rvChatList.getChildAdapterPosition(view);
+        //Toast.makeText(mActivity, "item click index = "+childAdapterPosition, Toast.LENGTH_SHORT).show();
+                int childAdapterPosition = rvChatList.getChildAdapterPosition(view);
+                TextView tx = (TextView) rvChatList.getChildViewHolder(view).itemView.findViewById(R.id.contentView);
+                String net_pattern="http[s]?://(\\w+.)+";
+                Pattern r = Pattern.compile(net_pattern);
+                Matcher m = r.matcher(tx.getText());
+                String URL="";
+                while(m.find()){
+                    URL=m.group();
+                }
+                if(URL.isEmpty())
+                    return ;
+                Intent intent=new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                Uri url=Uri.parse(URL);
+                intent.setData(url);
+                mActivity.startActivity(intent);
+    }
+
 }

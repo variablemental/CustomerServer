@@ -18,6 +18,9 @@ import android.widget.TabHost;
 
 import com.emotibot.xychatlib.XYlibChatActivity;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by coder-z on 17-10-25.
  */
@@ -73,6 +76,12 @@ public class HomeActivity extends TabActivity implements RadioGroup.OnCheckedCha
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case R.id.bar_side:
+
+                String t= "您好，请访问http://www.jshb.gov.cn点击查看";
+                String net_pattern="http[s]?://(\\w+.)+/?";
+                Pattern r = Pattern.compile(net_pattern);
+                Matcher m = r.matcher(t);
+                System.out.println(m.group());
 
                 return true;
             case R.id.bar_robot:
