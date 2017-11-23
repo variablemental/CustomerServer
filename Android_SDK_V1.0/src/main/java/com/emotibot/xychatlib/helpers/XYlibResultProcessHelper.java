@@ -15,6 +15,8 @@ import com.emotibot.xychatlib.utils.XYlibCommonResultUtils;
  * Created by ldy on 2017/2/24.
  */
 
+//解析服务器返回的JSON格式答案，根据信息类型将信息交付给不同Processor处理，控制Robot说话
+
 public class XYlibResultProcessHelper {
     private XYlibChatController mController;
 
@@ -32,9 +34,9 @@ public class XYlibResultProcessHelper {
         List<String> answersForKuaidi = new ArrayList<String>();
         for (String json:answers) {
             XYlibCommonResultUtils cru = new XYlibCommonResultUtils(json);
-            String msgType = cru.getType();
+            String msgType = cru.getType();                                                         //
             String command = cru.getCmd();
-            String value = cru.getValue();
+            String value = cru.getValue();                                                          //答案内容
             if (command.equals(URLConstants.CMD_KUAIDI)) {
                 answersForKuaidi.add(value);
             }

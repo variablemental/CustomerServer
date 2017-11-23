@@ -10,7 +10,6 @@ import java.util.List;
 
 import com.emotibot.xychatlib.factorys.XYlibViewHolderFactory;
 import com.emotibot.xychatlib.models.XYlibChatMessage;
-import com.emotibot.xychatlib.utils.RecyclerViewUtil;
 import com.emotibot.xychatlib.utils.XYlibChatMessageUtils;
 import com.emotibot.xychatlib.viewholders.XYlibBaseViewHolder;
 

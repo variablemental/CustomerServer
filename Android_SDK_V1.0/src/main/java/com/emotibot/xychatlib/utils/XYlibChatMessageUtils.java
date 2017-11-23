@@ -117,8 +117,8 @@ public class XYlibChatMessageUtils {
      */
     //机器人对话气泡创建
     public static XYlibChatMessage createRobotMsg(String uid, int msgType, String msg) {
-        if (msgType!=TYPING)
-            msg=msg_format(msg);
+       /* if (msgType!=TYPING)
+            msg=msg_format(msg);*/
         return createMsg(uid, msgType, FROM_ROBOT, msg);
     }
 
@@ -276,8 +276,12 @@ public class XYlibChatMessageUtils {
         Pattern r = Pattern.compile(net_pattern);
         Matcher m = r.matcher(t);
         while(m.find()) {
-            System.out.println(m.group());
+            String result=m.group();
+            System.out.println(result.substring(1,result.length()-2));
         }
+
+        String test="[2]";
+        System.out.println(test.substring(1,test.length()-1));
 
     }
 

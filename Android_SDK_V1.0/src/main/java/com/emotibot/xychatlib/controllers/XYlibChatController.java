@@ -6,8 +6,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
-import android.test.suitebuilder.TestMethod;
-import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -16,7 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.emotibot.xychatlib.utils.RecyclerViewUtil;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.litesuits.orm.db.assit.QueryBuilder;
 
@@ -259,11 +256,7 @@ public class XYlibChatController implements View.OnClickListener {
 
     public void showRobotSay(String msg) {
         deleteRobotSayWait();
-        //内容检查和格式化
-
-
-
-        //设置机器人说话内容
+        //设置机器人发言内容
         XYlibChatMessage chatmessage = XYlibChatMessageUtils.createRobotMsg(mActivity.getUid(),
                 XYlibChatMessageUtils.TEXT, msg);
         saveAndUpdateMsg(chatmessage);
@@ -388,8 +381,21 @@ public class XYlibChatController implements View.OnClickListener {
                 while(m.find()){
                     URL=m.group();
                 }
-                if(URL.isEmpty())
-                    return ;
+                if(URL.isEmpty()) {                                                                 //如果不包括网址，处理是否包含序号
+                    net_pattern = "\\[[1-9]*\\]";
+                    r = Pattern.compile(net_pattern);
+                    m = r.matcher(tx.getText());
+                    String num="";
+                    while (m.find()){
+                        num=m.group();
+                        num=num.substring(1,num.length()-1);                                        //截取框内数字部分
+                        if(!num.isEmpty()){
+                            userSay(num);
+                            break;
+                        }
+                    }
+                    return;
+                }
                 Intent intent=new Intent();
                 intent.setAction("android.intent.action.VIEW");
                 Uri url=Uri.parse(URL);
