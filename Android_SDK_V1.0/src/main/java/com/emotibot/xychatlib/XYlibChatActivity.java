@@ -164,6 +164,10 @@ public class XYlibChatActivity extends AppCompatActivity {
         chatController.onItemClick(view);
     }
 
+    public void utter(String utterance){
+        chatController.utter(utterance);
+    }
+
     public XYlibNetworkHelper getNetworkHelper() {
         return networkHelper;
     }

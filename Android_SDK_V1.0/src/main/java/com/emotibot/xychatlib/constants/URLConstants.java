@@ -38,6 +38,7 @@ public class URLConstants {
     public static final String CMD_NBA = "nba";
     public static final String CMD_EXCHANGERAGE = "exchangerate";
     public static final String CMD_TRANSLATE = "translate";
+    public static final String CMD_RESPONSE="response";
 
     public static final String EMOTION_NEUTRAL = "neutral";
 

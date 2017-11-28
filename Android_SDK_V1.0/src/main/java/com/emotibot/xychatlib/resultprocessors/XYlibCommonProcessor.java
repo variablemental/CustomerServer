@@ -32,12 +32,12 @@ public class XYlibCommonProcessor extends XYlibBaseProcessor {
                 value = XYlibConfig.ERR_REPLY_FAIL;
             }
 
-            List<String> utterance=msg_format(value);
+/*            List<String> utterance=msg_format(value);
             if (utterance.size()!=0)
                 for(String v:utterance){
                     controller.showRobotSay(v);                                                         //最终控制Rotbot说话
                 }
-            else
+            else*/
                 controller.showRobotSay(value);
         } else {
             controller.showRobotSay(XYlibConfig.ERR_REPLY_FAIL);

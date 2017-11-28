@@ -9,6 +9,7 @@ import com.emotibot.xychatlib.utils.XYlibChatMessageUtils;
 import com.emotibot.xychatlib.vhproducers.XYlibBaseProducer;
 import com.emotibot.xychatlib.vhproducers.XYlibNBAVHProducer;
 import com.emotibot.xychatlib.vhproducers.XYlibNewsVHProducer;
+import com.emotibot.xychatlib.vhproducers.XYlibResponseVHProducer;
 import com.emotibot.xychatlib.vhproducers.XYlibRobotImageVHProducer;
 import com.emotibot.xychatlib.vhproducers.XYlibRobotKuaidiVHProducer;
 import com.emotibot.xychatlib.vhproducers.XYlibRobotResWaitProducer;
@@ -54,5 +55,6 @@ public class XYlibViewHolderFactory {
         producerMap.put(XYlibChatMessageUtils.FROM_NEWS_PAGES, new XYlibNewsVHProducer());
         producerMap.put(XYlibChatMessageUtils.FROM_NBA, new XYlibNBAVHProducer());
         producerMap.put(XYlibChatMessageUtils.FROM_IMAGE, new XYlibRobotImageVHProducer());
+        producerMap.put(XYlibChatMessageUtils.FROM_LIST,new XYlibResponseVHProducer());
     }
 }

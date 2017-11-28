@@ -12,6 +12,7 @@ import com.emotibot.xychatlib.resultprocessors.XYlibImageProcessor;
 import com.emotibot.xychatlib.resultprocessors.XYlibKuaidiProcessor;
 import com.emotibot.xychatlib.resultprocessors.XYlibNBAProcessor;
 import com.emotibot.xychatlib.resultprocessors.XYlibNewsProcessor;
+import com.emotibot.xychatlib.resultprocessors.XYlibResponseProcessor;
 import com.emotibot.xychatlib.resultprocessors.XYlibVoiceProcessor;
 
 /**
@@ -66,6 +67,7 @@ public class ResultProcessorFactory {
         processorMap.put(URLConstants.CMD_KUAIDI, new XYlibKuaidiProcessor());
         processorMap.put(URLConstants.CMD_NEWS, new XYlibNewsProcessor());
         processorMap.put(URLConstants.CMD_NBA, new XYlibNBAProcessor());
+        processorMap.put(URLConstants.CMD_RESPONSE,new XYlibResponseProcessor());
         processorMap.put(URLConstants.CMD_IMAGE, imageProcessor);
         processorMap.put(URLConstants.CMD_PICTURE, imageProcessor);
     }

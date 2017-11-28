@@ -49,6 +49,7 @@ public class XYlibChatMessageUtils {
     public static final int AUDIO_BOOK = 0X191;
     public static final int COOKING = 0X192;
     public static final int NBA = 0X193;
+    public static final int RESPONSE=0X194;
 
     //--------------layout id-------------
     public static final int INVALID_TYPE = -1;
@@ -79,6 +80,7 @@ public class XYlibChatMessageUtils {
     public static final int FROM_AUDIO_BOOK = 24;
     public static final int FROM_COOKING = 25;
     public static final int FROM_NBA = 26;
+    public static final int FROM_LIST=27;
 
     //--------------msg status---------------
     public static final int MSG_STATUS_SENDING = 0x200;
@@ -88,7 +90,6 @@ public class XYlibChatMessageUtils {
 
     //--------------msg format----------------
     private static boolean MSG_LIST=false;
-    private static boolean MSG_LINK=false;
 
     private static Map<Integer, Integer> userMsgTypeMap = new HashMap<>();
     private static Map<Integer, Integer> robotMsgTypeMap = new HashMap<>();
@@ -117,8 +118,6 @@ public class XYlibChatMessageUtils {
      */
     //机器人对话气泡创建
     public static XYlibChatMessage createRobotMsg(String uid, int msgType, String msg) {
-       /* if (msgType!=TYPING)
-            msg=msg_format(msg);*/
         return createMsg(uid, msgType, FROM_ROBOT, msg);
     }
 
@@ -140,6 +139,7 @@ public class XYlibChatMessageUtils {
             robotMsgTypeMap.put(IMAGE, FROM_IMAGE);
             robotMsgTypeMap.put(NEWS_PAGES, FROM_NEWS_PAGES);
             robotMsgTypeMap.put(NBA, FROM_NBA);
+            robotMsgTypeMap.put(RESPONSE,FROM_LIST);
         }
     }
     public static int getViewType(int direction, int msgType) {

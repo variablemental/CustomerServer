@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical"
+    android:id="@+id/ll_response">
+
+    <RelativeLayout
+        android:id="@+id/rl_response1"
+        style="@style/NewsPageRl">
+
+        <TextView
+            android:id="@+id/rl_title1"
+            style="@style/NewsPageText"
+            android:layout_toLeftOf="@id/news_img1"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_line1"
+            style="@style/NewsPageLine"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_response2"
+        style="@style/NewsPageRl">
+        <TextView
+            android:id="@+id/rl_title2"
+            style="@style/NewsPageText"
+            android:layout_toLeftOf="@id/news_img2"/>
+        <RelativeLayout
+            android:id="@+id/rl_line2"
+            style="@style/NewsPageLine"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_response3"
+        style="@style/NewsPageRl">
+        <TextView
+            android:id="@+id/rl_title3"
+            style="@style/NewsPageText"
+            android:layout_toLeftOf="@id/news_img3"/>
+        <RelativeLayout
+            android:id="@+id/rl_line3"
+            style="@style/NewsPageLine"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_response4"
+        style="@style/NewsPageRl">
+        <TextView
+            android:id="@+id/rl_title4"
+            style="@style/NewsPageText"
+            android:layout_toLeftOf="@id/news_img4" />
+        <RelativeLayout
+            android:id="@+id/rl_line4"
+            style="@style/NewsPageLine"/>
+    </RelativeLayout>
+</LinearLayout>

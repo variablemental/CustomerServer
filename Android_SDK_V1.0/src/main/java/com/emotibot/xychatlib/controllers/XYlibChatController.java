@@ -124,7 +124,7 @@ public class XYlibChatController implements View.OnClickListener {
         mAdapter = new XYlibChatMessageAdapter(mActivity, mChatMsgList);
         rvChatList.setAdapter(mAdapter);
 
-        loadChatMessages();
+        //loadChatMessages();
     }
 
     //user send message start---------------
@@ -226,6 +226,7 @@ public class XYlibChatController implements View.OnClickListener {
             }
         });
     }
+
 
     //todo 持久化
     private void saveAndUpdateMsg(XYlibChatMessage chatMsg) {
@@ -396,11 +397,12 @@ public class XYlibChatController implements View.OnClickListener {
                     }
                     return;
                 }
-                Intent intent=new Intent();
-                intent.setAction("android.intent.action.VIEW");
-                Uri url=Uri.parse(URL);
-                intent.setData(url);
-                mActivity.startActivity(intent);
+                mActivity.getWebViewDialog().loadWebPage(URL);
+                mActivity.getWebViewDialog().show();
+    }
+
+    public void utter(String msg){
+        userSay(msg);
     }
 
 }

@@ -23,6 +23,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
+//白色可扩展选框
 @SuppressWarnings("unused")
 public class MaskView extends View {
 

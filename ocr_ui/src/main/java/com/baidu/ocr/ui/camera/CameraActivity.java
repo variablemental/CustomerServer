@@ -275,6 +275,7 @@ public class CameraActivity extends Activity {
         }
     };
 
+    //设置相机视图回调
     private CameraView.OnTakePictureCallback autoTakePictureCallback = new CameraView.OnTakePictureCallback() {
         @Override
         public void onPictureTaken(final Bitmap bitmap) {
@@ -495,6 +496,7 @@ public class CameraActivity extends Activity {
         }
     }
 
+    //退出相机，释放资源
     @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -21,7 +21,6 @@ public class XYlibChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.V
     private LayoutInflater mInflater;
     private List<XYlibChatMessage> mChatMsgsList;
     private XYlibChatActivity mActivity;
-    private OnItemClickListener listener=null;
 
     public XYlibChatMessageAdapter(Context context, List<XYlibChatMessage> chatMessagesList) {
         mInflater = LayoutInflater.from(context);
@@ -66,7 +65,4 @@ public class XYlibChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.V
         return mChatMsgsList.get(position);
     }
 
-    private static interface OnItemClickListener{
-        void onItemClick(View view,int posistion);
-    }
 }

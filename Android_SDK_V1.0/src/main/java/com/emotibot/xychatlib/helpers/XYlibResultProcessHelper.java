@@ -4,6 +4,8 @@ import android.text.TextUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.emotibot.xychatlib.XYlibConfig;
 import com.emotibot.xychatlib.constants.URLConstants;
@@ -66,8 +68,21 @@ public class XYlibResultProcessHelper {
                 break;
             } else {
                 //todo add more processor
-                ResultProcessorFactory.createProcessor(command).process(mController, msgType,
-                        command, value, json);
+                //检测在返回的过程中是否为LIST类型的数据，如果是，则设置相应的标志位
+                boolean MSG_LIST=false;
+                Pattern r = Pattern.compile("<list>");
+                Matcher m = r.matcher(value);
+                while(m.find()){
+                    m.group();
+                    MSG_LIST=true;
+                    break;
+                }
+                if (MSG_LIST)
+                    ResultProcessorFactory.createProcessor(URLConstants.CMD_RESPONSE).process(mController, msgType,
+                            URLConstants.CMD_RESPONSE, value, json);
+                else
+                    ResultProcessorFactory.createProcessor(command).process(mController, msgType,
+                            command, value, json);
             }
         }
 

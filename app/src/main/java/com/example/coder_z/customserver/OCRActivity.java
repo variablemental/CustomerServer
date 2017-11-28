@@ -53,6 +53,7 @@ public class OCRActivity extends AppCompatActivity {
         initAccessTokenWithAkSk();
     }
 
+    //初始化百度的AK和SK
     public void initAccessTokenWithAkSk() {
         OCR.getInstance().initAccessTokenWithAkSk(new OnResultListener<AccessToken>() {
             @Override
@@ -94,6 +95,7 @@ public class OCRActivity extends AppCompatActivity {
                 param.setRecognizeGranularity(GeneralParams.GRANULARITY_SMALL);
                 //存储位置
                 param.setImageFile(new File( new File(getApplicationContext().getFilesDir(), "pic.jpg").getAbsolutePath()));
+                //识别，成功后结果在OnResult执行
                 OCR.getInstance().recognizeGeneral(param, new OnResultListener<GeneralResult>() {
                     @Override
                     public void onResult(GeneralResult result) {
@@ -118,6 +120,7 @@ public class OCRActivity extends AppCompatActivity {
 
     }
 
+    //检查AK,SK是否验证有效。
     private boolean checkTokenStatus() {
         if (!hasGotToken) {
             Toast.makeText(this, "Access Token 获取失败", Toast.LENGTH_LONG);
