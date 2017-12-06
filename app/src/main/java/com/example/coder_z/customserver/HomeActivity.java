@@ -51,7 +51,7 @@ public class HomeActivity extends TabActivity implements RadioGroup.OnCheckedCha
         tabHost=getTabHost();
         tabHost.addTab(tabHost.newTabSpec(Home_Tag).setIndicator("0").setContent(new Intent(HomeActivity.this,MainActivity.class)));
         tabHost.addTab(tabHost.newTabSpec(Recognition_Tag).setIndicator("1").setContent(new Intent(HomeActivity.this,OCRActivity.class)));
-        tabHost.addTab(tabHost.newTabSpec(Me_Tag).setIndicator("2").setContent(new Intent(HomeActivity.this,MeActivity.class)));
+        tabHost.addTab(tabHost.newTabSpec(Me_Tag).setIndicator("2").setContent(new Intent(HomeActivity.this,MiniActivity.class)));
         tabHost.addTab(tabHost.newTabSpec(Setting_Tag).setIndicator("3").setContent(new Intent(HomeActivity.this,SettingActivity.class)));
         tabHost.setCurrentTab(0);
 
@@ -77,12 +77,9 @@ public class HomeActivity extends TabActivity implements RadioGroup.OnCheckedCha
         switch (item.getItemId()){
             case R.id.bar_side:
 
-                String t= "您好，请访问http://www.jshb.gov.cn点击查看";
-                String net_pattern="http[s]?://(\\w+.)+/?";
-                Pattern r = Pattern.compile(net_pattern);
-                Matcher m = r.matcher(t);
-                System.out.println(m.group());
-
+                Log.d(Home_Tag,"decetion is on !");
+                Intent i=new Intent(HomeActivity.this,RecognitionActivity.class);
+                startActivity(i);
                 return true;
             case R.id.bar_robot:
                 Log.d(Home_Tag,"robot is on !");

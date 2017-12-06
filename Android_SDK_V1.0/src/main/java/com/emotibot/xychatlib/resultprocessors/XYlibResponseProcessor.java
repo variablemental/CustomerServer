@@ -11,6 +11,7 @@ public class XYlibResponseProcessor extends XYlibBaseProcessor {
     @Override
     public void process(XYlibChatController controller, String type, String cmd, String value,
                         String content){
+        controller.showRobotSay("请从以下几个选项中选择：");
         controller.showRobotSay(content, XYlibChatMessageUtils.RESPONSE);
     }
 }

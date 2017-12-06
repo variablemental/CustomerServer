@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -69,6 +70,21 @@
         <activity android:name=".FakeRobot">
 
         </activity>
+
+        <activity android:name=".MiniActivity">
+
+        </activity>
     </application>
+
+    <meta-data android:name="com.baidu.speech.APP_ID"
+        android:value="9788136" />
+    <meta-data
+        android:name="com.baidu.speech.API_KEY"
+        android:value="0GjQNO5H4pGPf9HyA3AmZEbz" />
+    <meta-data
+        android:name="com.baidu.speech.SECRET_KEY"
+        android:value="db981ef3ec647ba8a09b599ad7447a24" />
+
+    <service android:name="com.baidu.speech.VoiceRecognitionService" android:exported="false" />
 
 </manifest>

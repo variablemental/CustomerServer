@@ -4,12 +4,15 @@ package com.example.coder_z.customserver;
  * Created by Administrator on 2017\11\7 0007.
  */
 
+import android.util.Pair;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +20,10 @@ import java.util.Map;
  * 获取token类
  */
 public class AuthService {
+
+    private static HashMap<String,String> keyMap=new HashMap<String,String>(){
+
+    };
 
     /**
      * 获取权限token
@@ -31,11 +38,11 @@ public class AuthService {
         // 官网获取的 API Key 更新为你注册的
         //String clientId = "NhGkmkiBrzeRRF0c080aFimL";
         //windows-test
-        String clientId="KaLSBumGmdQKaSjaGO4egvFw";
+        String clientId="kjO0gFnVgATBcKIYVwgLGNnk";
         // 官网获取的 Secret Key 更新为你注册的
         //String clientSecret = "P6uYiV4kuxWq7HBEBvHAhCU5SQWb6FEB";
         //windows-test
-        String clientSecret="y8fbesGdaTkfCAvDRjjXgIuoGeA2jd71";
+        String clientSecret="BVLbgtAndHMrFD3zjwCs48LgsUg6m644";
         return getAuth(clientId, clientSecret);
     }
 

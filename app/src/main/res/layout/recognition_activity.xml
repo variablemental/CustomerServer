@@ -3,6 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/take_photo"
+        android:text="@string/text_take_photo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
     <TextView
         android:id="@+id/recognition_notice"
         android:layout_width="wrap_content"
@@ -11,19 +19,13 @@
         android:layout_centerHorizontal="true"
         android:text="@string/test_recognition"
         android:textSize="@dimen/activity_vertical_margin"
+        android:layout_below="@id/take_photo"
         />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/photo_view"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/recognition_notice"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/take_photo"
-        android:text="@string/text_take_photo"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/recognition_notice"
+        android:layout_above="@id/take_photo"
         />
 </RelativeLayout>

@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="com.example.coder_z.thousandleaves.MainActivity"
+        android:background="@drawable/fake_background"
         android:weightSum="1">
 
         <FrameLayout
