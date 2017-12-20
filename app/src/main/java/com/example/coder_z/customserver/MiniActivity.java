@@ -94,7 +94,7 @@ public class MiniActivity extends AppCompatActivity {
         hThread.start();
         tHandler=new Handler(hThread.getLooper()){
 
-        }
+        };
     }
 
     /**

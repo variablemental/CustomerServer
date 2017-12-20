@@ -52,15 +52,15 @@ public class RecognitionActivity extends AppCompatActivity {
     public void onCreate(Bundle onSavedStateInstance){
         super.onCreate(onSavedStateInstance);
         setContentView(R.layout.recognition_activity);
-        mPhotoButton=(Button)findViewById(R.id.take_photo);
+       // mPhotoButton=(Button)findViewById(R.id.take_photo);
         mPhotoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivityForResult(new Intent("android.media.action.IMAGE_CAPTURE"),TAKE_PICTURE);
             }
         });
-        mImageView=(ImageView)findViewById(R.id.photo_view);
-        mNotice=(TextView)findViewById(R.id.recognition_notice);
+      //  mImageView=(ImageView)findViewById(R.id.photo_view);
+      //  mNotice=(TextView)findViewById(R.id.recognition_notice);
         handler=new Handler(){
             @Override
             public void handleMessage(Message message){

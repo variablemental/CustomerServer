@@ -8,7 +8,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.coder_z.customserver.MainActivity">
+    tools:context="com.example.coder_z.customserver.MainActivity"
+    android:background="@color/grey"
+    >
 
         <TextView
             android:layout_width="wrap_content"

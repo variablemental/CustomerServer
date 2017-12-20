@@ -11,9 +11,9 @@ import org.json.JSONObject;
 
 public class NLPTest {
     //设置APPID/AK/SK
-    public static final String APP_ID = "你的 App ID";
-    public static final String API_KEY = "你的 Api Key";
-    public static final String SECRET_KEY = "你的 Secret Key";
+    public static final String APP_ID = "10494043";
+    public static final String API_KEY = "6N7xGqFziFYcNBm8l5nHrzQC";
+    public static final String SECRET_KEY = "g9MuiUhPi1icFuyTKiTxTYWRTGHEanCo";
 
     public static void main(String[] args) throws JSONException{
         // 初始化一个AipNlp

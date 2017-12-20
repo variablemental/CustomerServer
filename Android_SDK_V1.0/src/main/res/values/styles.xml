@@ -16,15 +16,15 @@
     </style>
 
     <style name="chatTimeView">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_width">74dp</item>
+        <item name="android:layout_height">36dp</item>
         <item name="android:gravity">center</item>
         <item name="android:background">@drawable/bg_chat_time</item>
         <item name="android:textColor">@color/chatTimeText</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">22px</item>
         <item name="android:visibility">gone</item>
-        <item name="android:layout_marginBottom">11dp</item>
-        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginTop">14dp</item>
         <item name="android:layout_centerHorizontal">true</item>
     </style>
 
@@ -40,7 +40,7 @@
 
     <style name="toLayoutStyle" parent="layoutStyle">
         <!--<item name="android:layout_marginTop">7dp</item>-->
-        <item name="android:paddingLeft">40dp</item>
+
     </style>
 
     <style name="headViewStyle">
@@ -66,20 +66,23 @@
 
     <style name="fromContentLayoutStyle" parent="contentLayoutStyle">
         <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:layout_marginTop">20px</item>
         <item name="android:background">@drawable/ic_chat_left_clickable</item>
     </style>
 
     <style name="toContentLayoutStyle" parent="contentLayoutStyle">
-        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:background">@drawable/ic_chat_right_clickable</item>
     </style>
 
     <style name="contentPadding">
-        <item name="android:paddingLeft">3dp</item>
-        <item name="android:paddingRight">3dp</item>
-        <item name="android:paddingTop">0dp</item>
-        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">20px</item>
+        <item name="android:paddingRight">20px</item>
+        <item name="android:paddingTop">28px</item>
+        <item name="android:paddingBottom">0px</item>
     </style>
 
     <style name="Theme_AudioDialog" parent="@android:style/Theme.Dialog">

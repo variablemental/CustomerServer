@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:id="@+id/timeView"
+        android:visibility="visible"
+        style="@style/chatTimeView"
+        android:text="今天 19:45"
+        android:textSize="22px"
+        android:paddingTop="14px"
+        />
+    <RelativeLayout
+        android:id="@+id/contentLy"
+        style="@style/toLayoutStyle"
+        android:layout_below="@+id/timeView">
+        <ImageView
+            android:id="@+id/chat_touxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingRight="20dp"
+            android:src="@drawable/touxiang_1"
+            />
+
+        <RelativeLayout
+            style="@style/toContentLayoutStyles"
+            android:layout_toLeftOf="@id/chat_touxiang"
+            >
+        <TextView
+            android:id="@+id/contentView_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="默认消息"
+            android:textColor="@color/chatToTextColor"
+            android:textSize="@dimen/chat_text_size"
+            android:visibility="visible"
+            />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

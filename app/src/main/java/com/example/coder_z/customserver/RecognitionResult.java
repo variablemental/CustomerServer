@@ -1,8 +1,19 @@
 package com.example.coder_z.customserver;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.baidu.aip.util.Base64Util;
 
+import org.w3c.dom.Text;
+
+import java.io.ByteArrayOutputStream;
 import java.net.URLEncoder;
 
 /**
@@ -10,7 +21,32 @@ import java.net.URLEncoder;
  */
 public class RecognitionResult {
 
+    static Runnable networkTask=new Runnable() {
+        @Override
+        public void run() {
+            try {
+                reco_result = RecognitionResult.detect(bytes);
+                Message msg=new Message();
+                Bundle bundle=new Bundle();
+                bundle.putString(NOTICE_MESSAGE,reco_result);
+                msg.setData(bundle);
+                handler.sendMessage(msg);
+                Toast.makeText(mContext, reco_result, Toast.LENGTH_LONG).show();
+                System.out.println(reco_result);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+    };
+
     private static final String TAG="RecognitionResult";
+    private static Handler handler=null;
+    private static final String NOTICE_MESSAGE="NOTICE_MESSAGE";
+    private static String reco_result;
+    private static byte[] bytes=null;
+    static private TextView mNotice;
+    private static Context mContext;
+
     /**
      * 重要提示代码中所需工具类
      * FileUtil,Base64Util,HttpUtil,GsonUtils请从
@@ -58,6 +94,34 @@ public class RecognitionResult {
         String result = HttpUtil.post(url, accessToken, param);
         System.out.println(result);
         return result;
+    }
+
+    public static void initHandler(){
+        handler=new Handler(){
+            @Override
+            public void handleMessage(Message message){
+                Bundle b=message.getData();
+                String str=b.getString(NOTICE_MESSAGE);
+                mNotice.setText(str);
+            }
+        };
+    }
+
+    public static void setmNotice(TextView notice){
+        mNotice=notice;
+    }
+
+    public static void onResult(Context context, Intent data){
+        Bitmap bitmap=(Bitmap) data.getExtras().get("data");
+        process(context,bitmap);
+    }
+
+    public static void process(Context context,Bitmap bitmap){
+        ByteArrayOutputStream baos=new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,baos);
+        bytes=baos.toByteArray();
+        mContext=context;
+        new Thread(networkTask).start();    //后台线程调用API识别
     }
 
     public static void main(String[] args) {

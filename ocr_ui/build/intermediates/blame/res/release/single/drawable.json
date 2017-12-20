@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
-        "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
-    },
-    {
         "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\notification_icon_background.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
@@ -28,16 +28,16 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
-        "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+        "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
         "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\abc_text_cursor_material.xml"
     },
     {
-        "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
+        "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\5b3743611a1859501ba60c3509115493a2e5ceeb\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "F:\\Customserver\\ocr_ui\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_go_search_api_material.xml",

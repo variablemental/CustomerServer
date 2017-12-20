@@ -9,4 +9,6 @@
     <color name="title_bg">#FF9ed913</color>
     <color name="end_color">#A0cfef83</color>
     <color name="naive_blue">#33B5E5</color>
+    <color name="time_stamp">#cecece</color>
+    <color name="chat_color">#3391da</color>
 </resources>

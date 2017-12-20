@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="com.example.coder_z.thousandleaves.MainActivity"
-        android:background="@drawable/fake_background"
         android:weightSum="1">
 
         <FrameLayout
@@ -37,7 +36,6 @@
         android:orientation="horizontal"
         android:layout_gravity="bottom"
         android:id="@+id/radio_group"
-        android:background="@drawable/bottom_bar"
         >
 
         <RadioButton
@@ -45,8 +43,8 @@
             android:text="@string/text_home"
             android:textColor="@color/tab_text"
             android:id="@+id/main"
-            android:drawableTop="@color/tab_button_home"
-
+            android:drawableTop="@color/tab_zhuye"
+            android:paddingTop="12dp"
             style="@style/tab_button_bg" />
 
         <RadioButton
@@ -54,21 +52,24 @@
             android:textColor="@color/tab_text"
             android:id="@+id/recognition"
             style="@style/tab_button_bg"
-            android:drawableTop="@color/tab_button_recognition"
+            android:drawableTop="@color/tab_shibie"
+            android:paddingTop="11dp"
             android:layout_width="0dp" />
 
         <RadioButton
             android:text="@string/text_browser"
             android:textColor="@color/tab_text"
             android:id="@+id/browser"
-            android:drawableTop="@color/tab_button_browser"
+            android:drawableTop="@color/tab_qita"
+            android:paddingTop="11dp"
             style="@style/tab_button_bg" />
 
         <RadioButton
             android:text="@string/text_setting"
             android:textColor="@color/tab_text"
             android:id="@+id/setting"
-            android:drawableTop="@color/tab_button_setting"
+            android:drawableTop="@color/tab_shezhi"
+            android:paddingTop="12dp"
             style="@style/tab_button_bg"/>
 
     </RadioGroup>

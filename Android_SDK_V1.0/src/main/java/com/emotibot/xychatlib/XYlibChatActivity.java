@@ -203,4 +203,5 @@ public class XYlibChatActivity extends AppCompatActivity {
     public XYlibWebViewDialog getWebViewDialog() {
         return webViewDialog;
     }
+
 }

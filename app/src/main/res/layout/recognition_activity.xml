@@ -3,14 +3,73 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/take_photo"
-        android:text="@string/text_take_photo"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        />
+        android:orientation="horizontal"
+        android:id="@+id/top_tab"
+        >
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:id="@+id/reco_radio_group"
+            android:background="#222222"
+            >
+
+            <RadioButton
+                android:checked="true"
+                android:text="@string/text_ocr"
+                android:textColor="@color/tab_text"
+                android:id="@+id/main"
+                android:paddingTop="12px"
+                android:drawableTop="@null"
+                style="@style/tab_button_bg"
+                android:textSize="50px"
+                android:drawablePadding="-20px"
+                android:layout_gravity="center"
+                />
+
+            <RadioButton
+                android:text="@string/text_pic"
+                android:textColor="@color/tab_text"
+                android:id="@+id/recognition"
+                style="@style/tab_button_bg"
+                android:drawableTop="@color/tab_renlian"
+                android:paddingTop="11px"
+                android:layout_width="0dp" />
+
+            <RadioButton
+                android:text="@string/text_face"
+                android:textColor="@color/tab_text"
+                android:id="@+id/browser"
+                android:drawableTop="@color/tab_tupian"
+                android:paddingTop="11px"
+                style="@style/tab_button_bg" />
+
+        </RadioGroup>
+
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_tab"
+        android:layout_above="@+id/relativeLayout"
+        android:id="@+id/center_layout"
+        >
+
+        <SurfaceView
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:id="@+id/camera_surface"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true" />
+
     <TextView
         android:id="@+id/recognition_notice"
         android:layout_width="wrap_content"
@@ -19,13 +78,43 @@
         android:layout_centerHorizontal="true"
         android:text="@string/test_recognition"
         android:textSize="@dimen/activity_vertical_margin"
-        android:layout_below="@id/take_photo"
+        android:layout_centerInParent="true"
         />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/photo_view"
         android:layout_centerHorizontal="true"
-        android:layout_above="@id/take_photo"
+        android:layout_above="@id/recognition_notice"
         />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160px"
+        android:layout_alignParentBottom="true"
+        android:background="#222222"
+        android:id="@+id/relativeLayout">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/take_photo"
+        android:text="@string/text_take_photo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="58px"
+        android:layout_marginRight="60px"
+        android:src="@drawable/xiangce_icon"
+        />
+
+    </RelativeLayout>
+
+
 </RelativeLayout>

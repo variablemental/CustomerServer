@@ -9,11 +9,10 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:background="@color/naive_blue"
         android:gravity="center"
         android:text="@string/text_chatting"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp" />
+        android:textColor="#222222"
+        android:textSize="34px" />
     <!-- 列表 -->
     <!-- cacheColorHint缓存颜色 -->
 
@@ -22,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginTop="14dp"
         android:cacheColorHint="@android:color/transparent"
         android:clickable="false"
         android:divider="@android:color/transparent"
@@ -34,21 +34,32 @@
         android:layout_height="50dp"
         android:orientation="horizontal" >
 
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/yuyin"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp"
+            />
+
         <EditText
             android:id="@+id/input"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="1" />
+            android:layout_width="480dp"
+            android:layout_height="74dp"
+            android:layout_weight="1"
+
+            />
 
         <Button
             android:id="@+id/send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/naive_blue"
-            android:textColor="@color/white"
+            android:layout_marginRight="20dp"
+            android:background="@color/white"
+            android:textColor="#333333"
             android:gravity="center"
             android:text="发送"
-            android:textSize="18sp" />
+            android:textSize="28px" />
     </LinearLayout>
 
 
