@@ -58,7 +58,7 @@ public class ChatController implements View.OnClickListener {
     private RecyclerView rvChatList;
     private SwipeRefreshLayout srl;
     private XYlibRecordBtn recordBtn;
-    private XYlibChatMessageAdapter mAdapter;
+    private ChatMessageAdapter mAdapter;
 
     private List<XYlibChatMessage> mChatMsgList;
     private boolean isRefresh;
@@ -74,7 +74,7 @@ public class ChatController implements View.OnClickListener {
         initData();
     }
 
-    public XYlibChatMessageAdapter getAdapter() {
+    public ChatMessageAdapter getAdapter() {
         return mAdapter;
     }
 
@@ -120,7 +120,7 @@ public class ChatController implements View.OnClickListener {
 
     private void initData() {
         mChatMsgList = new ArrayList<>();
-        mAdapter = new XYlibChatMessageAdapter(mActivity, mChatMsgList);
+        mAdapter = new ChatMessageAdapter(mActivity, mChatMsgList);
         rvChatList.setAdapter(mAdapter);
 
         //loadChatMessages();
@@ -131,9 +131,12 @@ public class ChatController implements View.OnClickListener {
         if (TextUtils.isEmpty(msg)) {
             return;
         }
-
-        showUserSay(msg);
-        sendTextMsg(msg);
+        try {
+            showUserSay(msg);
+            //sendTextMsg(msg);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void sendTextMsg(String msg) {
@@ -168,8 +171,8 @@ public class ChatController implements View.OnClickListener {
             return;
         }
 
-        XYlibChatMessage chatmessage = XYlibChatMessageUtils.createUserMsg(mActivity.getUid(),
-                XYlibChatMessageUtils.TEXT, msg);
+        XYlibChatMessage chatmessage = ChatMessageUtils.createUserMsg(mActivity.getUid(),
+                ChatMessageUtils.TEXT, msg);
         saveAndUpdateMsg(chatmessage);
     }
 
@@ -251,21 +254,21 @@ public class ChatController implements View.OnClickListener {
             return;
         }
 
-        new XYlibResultProcessHelper(this).process(returnResultUtils.getAllElement());
+        new ResultProcessHelper(this).process(returnResultUtils.getAllElement());
     }
 
     public void showRobotSay(String msg) {
         deleteRobotSayWait();
         //设置机器人发言内容
-        XYlibChatMessage chatmessage = XYlibChatMessageUtils.createRobotMsg(mActivity.getUid(),
-                XYlibChatMessageUtils.TEXT, msg);
+        XYlibChatMessage chatmessage = ChatMessageUtils.createRobotMsg(mActivity.getUid(),
+                ChatMessageUtils.TEXT, msg);
         saveAndUpdateMsg(chatmessage);
     }
 
     public void showRobotSayWait() {
         deleteRobotSayWait();
-        XYlibChatMessage chatmessage = XYlibChatMessageUtils.createRobotMsg(mActivity.getUid(),
-                XYlibChatMessageUtils.TYPING, "wait");
+        XYlibChatMessage chatmessage = ChatMessageUtils.createRobotMsg(mActivity.getUid(),
+                ChatMessageUtils.TYPING, "wait");
         mChatMsgList.add(chatmessage);
         mAdapter.notifyDataSetChanged();
         rvChatList.scrollToPosition(mChatMsgList.size() - 1);
@@ -273,14 +276,14 @@ public class ChatController implements View.OnClickListener {
 
     public void showRobotSayVoice(int seconds, String filePath) {
         deleteRobotSayWait();
-        XYlibChatMessage cm = XYlibChatMessageUtils.createVoiceMsg(mActivity.getUid(),
-                                    XYlibChatMessageUtils.FROM_ROBOT, seconds, filePath);
+        XYlibChatMessage cm = ChatMessageUtils.createVoiceMsg(mActivity.getUid(),
+                                    ChatMessageUtils.FROM_ROBOT, seconds, filePath);
         saveAndUpdateMsg(cm);
     }
 
     public void showRobotSay(String str, int msgType) {
         deleteRobotSayWait();
-        XYlibChatMessage cm = XYlibChatMessageUtils.createRobotMsg(mActivity.getUid(), msgType,
+        XYlibChatMessage cm = ChatMessageUtils.createRobotMsg(mActivity.getUid(), msgType,
                                                                     str);
         saveAndUpdateMsg(cm);
     }
@@ -290,7 +293,7 @@ public class ChatController implements View.OnClickListener {
         int size = mChatMsgList.size();
         if (size >0
                 && mChatMsgList.get(size - 1).getMsgType()
-                    == XYlibChatMessageUtils.TYPING) {
+                    == ChatMessageUtils.TYPING) {
             mChatMsgList.remove(size - 1);
         }
     }
@@ -349,8 +352,8 @@ public class ChatController implements View.OnClickListener {
 
         @Override
         public void onAudioRecordFinish(float seconds, String filePath) {
-            XYlibChatMessage cm = XYlibChatMessageUtils.createVoiceMsg(mActivity.getUid(),
-                                    XYlibChatMessageUtils.TO_ROBOT, (int)(seconds+0.5), filePath);
+            XYlibChatMessage cm = ChatMessageUtils.createVoiceMsg(mActivity.getUid(),
+                                    ChatMessageUtils.TO_ROBOT, (int)(seconds+0.5), filePath);
             userSayVoice(cm);
         }
 
@@ -362,10 +365,15 @@ public class ChatController implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        try {
+
         if (v.getId() == R.id.send_btn) {
             onSendClick();
         }else if(v.getId()==R.id.contentView){
             Toast.makeText(mActivity,"yes",Toast.LENGTH_LONG).show();
+        }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 

@@ -44,9 +44,10 @@
     </style>
 
     <style name="contentPadding">
-        <item name="android:paddingRight">10dp</item>
-        <item name="android:paddingTop">20dp</item>
-        <item name="android:paddingBottom">20dp</item>
+        <item name="android:paddingRight">5.7dp</item>
+        <item name="android:paddingTop">5.7dp</item>
+        <item name="android:paddingBottom">5.7dp</item>
+        <item name="android:layout_marginLeft">2.85dp</item>
     </style>
     <style name="toContentLayoutStyles"
         parent="contentLayoutStyle">

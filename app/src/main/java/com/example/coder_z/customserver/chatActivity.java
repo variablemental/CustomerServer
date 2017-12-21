@@ -47,8 +47,14 @@ public class chatActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.chatting_activity);
+        setContentView(R.layout.activity_xylibchat);
         chatController = new ChatController(this);
+        findViewById(com.emotibot.xychatlib.R.id.ib_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 
@@ -82,10 +88,9 @@ public class chatActivity extends Activity {
     public String getUid() {
         return mUid;
     }
-
-
-
-}
+    public ChatController getChatController() {
+        return chatController;
+    }
 
 
 

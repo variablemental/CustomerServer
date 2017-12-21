@@ -68,6 +68,8 @@ public class HomeActivity extends TabActivity implements RadioGroup.OnCheckedCha
         SearchableInfo info=searchManager.getSearchableInfo(getComponentName());
         searchView.setSearchableInfo(info);
 
+        //scale=3.0 dp=pxValue / scale + 0.5f=pxValue / 3.5
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -78,7 +80,7 @@ public class HomeActivity extends TabActivity implements RadioGroup.OnCheckedCha
             case R.id.bar_side:
 
                 Log.d(Home_Tag,"decetion is on !");
-                Intent i=new Intent(HomeActivity.this,RecognitionActivity.class);
+                Intent i=new Intent(HomeActivity.this,chatActivity.class);
                 startActivity(i);
                 return true;
             case R.id.bar_robot:

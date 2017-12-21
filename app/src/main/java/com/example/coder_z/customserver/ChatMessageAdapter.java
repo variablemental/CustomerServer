@@ -1,32 +1,32 @@
-package com.emotibot.xychatlib;
+package com.example.coder_z.customserver;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.List;
-
+import com.emotibot.xychatlib.XYlibChatActivity;
 import com.emotibot.xychatlib.factorys.XYlibViewHolderFactory;
 import com.emotibot.xychatlib.models.XYlibChatMessage;
 import com.emotibot.xychatlib.utils.XYlibChatMessageUtils;
 import com.emotibot.xychatlib.viewholders.XYlibBaseViewHolder;
 
+import java.util.List;
+
 /**
  * Created by ldy on 2017/2/23.
  */
 
-public class XYlibChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private LayoutInflater mInflater;
     private List<XYlibChatMessage> mChatMsgsList;
-    private XYlibChatActivity mActivity;
+    private chatActivity mActivity;
 
-    public XYlibChatMessageAdapter(Context context, List<XYlibChatMessage> chatMessagesList) {
+    public ChatMessageAdapter(Context context, List<XYlibChatMessage> chatMessagesList) {
         try {
             mInflater = LayoutInflater.from(context);
             mChatMsgsList = chatMessagesList;
-            mActivity = (XYlibChatActivity) context;
+            mActivity = (chatActivity) context;
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -42,7 +42,7 @@ public class XYlibChatMessageAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        XYlibBaseViewHolder viewHolder = (XYlibBaseViewHolder)holder;
+        BaseViewHolder viewHolder = (BaseViewHolder)holder;
         viewHolder.bindView(mChatMsgsList.get(position), mActivity, position);
 
         viewHolder.itemView.setTag(position);

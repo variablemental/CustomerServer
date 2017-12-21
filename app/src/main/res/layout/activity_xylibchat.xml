@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/chatDefaultBg"
+    android:background="#ebebeb"
     >
 
     <RelativeLayout
@@ -29,15 +29,15 @@
                 android:id="@+id/voice_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20px"
-                android:layout_marginRight="30px"
+                android:layout_marginLeft="5.7dp"
+                android:layout_marginRight="8.5dp"
                 android:background="@null"
                 android:src="@drawable/icon_chat_edit_space_voice" />
 
             <EditText
                 android:id="@+id/et_input"
-                android:layout_width="480px"
-                android:layout_height="74px"
+                android:layout_width="137dp"
+                android:layout_height="21.1dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="1dp"
                 android:maxLines="3"
@@ -70,9 +70,9 @@
 
             <Button
                 android:id="@+id/send_btn"
-                android:layout_width="100px"
-                android:layout_height="74px"
-                android:layout_marginRight="4dp"
+                android:layout_width="28.5dp"
+                android:layout_height="21.1dp"
+                android:layout_marginRight="5dp"
                 android:background="@color/white"
                 android:text="发送"
                 android:textColor="#333333"

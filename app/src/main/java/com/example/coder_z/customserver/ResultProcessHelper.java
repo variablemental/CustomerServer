@@ -19,10 +19,10 @@ import java.util.regex.Pattern;
 
 //解析服务器返回的JSON格式答案，根据信息类型将信息交付给不同Processor处理，控制Robot说话
 
-public class XYlibResultProcessHelper {
+public class ResultProcessHelper {
     private ChatController mController;
 
-    public XYlibResultProcessHelper(ChatController controller) {
+    public ResultProcessHelper(ChatController controller) {
         mController = controller;
     }
 
@@ -63,7 +63,7 @@ public class XYlibResultProcessHelper {
             }
 
             if (command.equals(URLConstants.CMD_KUAIDI)) {
-                ResultProcessorFactory.createProcessor(command).process(mController,
+                ProcessorFactory.createProcessor(command).process(mController,
                         answersForKuaidi);
                 break;
             } else {
@@ -78,10 +78,10 @@ public class XYlibResultProcessHelper {
                     break;
                 }
                 if (MSG_LIST)
-                    ResultProcessorFactory.createProcessor(URLConstants.CMD_RESPONSE).process(mController, msgType,
+                    ProcessorFactory.createProcessor(URLConstants.CMD_RESPONSE).process(mController, msgType,
                             URLConstants.CMD_RESPONSE, value, json);
                 else
-                    ResultProcessorFactory.createProcessor(command).process(mController, msgType,
+                    ProcessorFactory.createProcessor(command).process(mController, msgType,
                             command, value, json);
             }
         }
